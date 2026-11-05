@@ -1,0 +1,86 @@
+{
+  "index.html": {
+    "sha256": "f720622b40f750eca40162b18c455281ac446b8e5a557483d41edaefee55f1d9",
+    "lastmod": "2026-11-05"
+  },
+  "en/index.html": {
+    "sha256": "d06d3f3e83ac88d675cfe7d51f3ff8657fc65cb60564c02e600d9393ad1e4a64",
+    "lastmod": "2026-11-05"
+  },
+  "ru/index.html": {
+    "sha256": "02be3b3e444c6215e073a5d3f6e4b201f9d68e486f6e809e95b931de796a4cd4",
+    "lastmod": "2026-11-05"
+  },
+  "faydali-melumatlar/index.html": {
+    "sha256": "ffda6addea49fc59223e5ce94a1b16252f0f8a96ee91f4b6a90ba9d635500f07",
+    "lastmod": "2026-11-05"
+  },
+  "en/faydali-melumatlar/index.html": {
+    "sha256": "309ba3f35f9950600c21892d7507fdf24668f9701895e7db53bf1d71cb733ff7",
+    "lastmod": "2026-11-05"
+  },
+  "ru/faydali-melumatlar/index.html": {
+    "sha256": "453e6b0643ff9b644ea50f64d4b7427f0f7f98544e0add01be63b95a62a92de0",
+    "lastmod": "2026-11-05"
+  },
+  "elaqe/index.html": {
+    "sha256": "8ac46cb0855ec493fbfbcdb31a29f9ce07b1fc7fd75d2125bde0ed1c284642be",
+    "lastmod": "2026-11-05"
+  },
+  "en/elaqe/index.html": {
+    "sha256": "f829b9bfad6ce511de98d8d3c27db8edbf326ee764267a6ed83b6a8cf2ba8583",
+    "lastmod": "2026-11-05"
+  },
+  "ru/elaqe/index.html": {
+    "sha256": "4a5c5b1c34c0b4a51288d438c5490d11a046053a8eb7df05ff2c36d5e7d1ff30",
+    "lastmod": "2026-11-05"
+  },
+  "mexfilik-siyaseti/index.html": {
+    "sha256": "4302c5fe9e44a7420d701e1a4829ae4a78ee4706fead56bde807f3e13fd743a8",
+    "lastmod": "2026-11-05"
+  },
+  "en/mexfilik-siyaseti/index.html": {
+    "sha256": "695e9f8d9b48f769aef28861bbe0889f3551bf1c930ac53b1707a731ecca3885",
+    "lastmod": "2026-11-05"
+  },
+  "ru/mexfilik-siyaseti/index.html": {
+    "sha256": "f2ed28b425f8ee296870581d18f8ac7fa2c63cea338f41e4a563c182e9733807",
+    "lastmod": "2026-11-05"
+  },
+  "kuki-bildirisi/index.html": {
+    "sha256": "73714586cf363d2d9e0d2098264fe116ffbf82a997bfe063f531befe9f2a2487",
+    "lastmod": "2026-11-05"
+  },
+  "en/kuki-bildirisi/index.html": {
+    "sha256": "d5e711bf90accef8ae1c945fd4408192c1ee81a14949236cdfd1be59dd83afe8",
+    "lastmod": "2026-11-05"
+  },
+  "ru/kuki-bildirisi/index.html": {
+    "sha256": "3311a9972d4f8bcdcb656bf9e8234c2f7fa2d2ea9a81e340b5861dbee39e4ff7",
+    "lastmod": "2026-11-05"
+  },
+  "istifade-sertleri/index.html": {
+    "sha256": "2ed78c078a1a61648995f7d8bf9e040232b5562c71361148ae12bcb583016939",
+    "lastmod": "2026-11-05"
+  },
+  "en/istifade-sertleri/index.html": {
+    "sha256": "0c8c70de995c6208654308985498c11b3819bdc8766508fc6c814d4c3ca3b70c",
+    "lastmod": "2026-11-05"
+  },
+  "ru/istifade-sertleri/index.html": {
+    "sha256": "c0c9d0e913da62ca34511013803aa6b378787235aaadc70ec05b175365085811",
+    "lastmod": "2026-11-05"
+  },
+  "tibbi-melumat/index.html": {
+    "sha256": "aa9d2b35477cba0273280b400c3a6f07157eeec15c30b1a6d3be39fde4ded8ba",
+    "lastmod": "2026-11-05"
+  },
+  "en/tibbi-melumat/index.html": {
+    "sha256": "651cfb28be4ffacace2ecb00df5100f67957f51516bb9e715ccce7e332428db6",
+    "lastmod": "2026-11-05"
+  },
+  "ru/tibbi-melumat/index.html": {
+    "sha256": "288aa98ae47fd95f4d4620c649620ebeb5439248043a6810ce48a95353b5b443",
+    "lastmod": "2026-11-05"
+  }
+}

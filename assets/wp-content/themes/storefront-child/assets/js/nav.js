@@ -18,6 +18,26 @@
 
    The bell in the handheld footer bar (inc/footer.php) is the second half
    of the same decision: notifications one tap away, without the menu. */
+
+/* Owner 2026-10-04 (scr 20-27.e): an iPhone fires 'resize' every time the
+   browser shows or hides its toolbar — mid-scroll, and only the HEIGHT
+   changes. Handlers that depend on width ask this first and skip those.
+   documentElement.clientWidth, not innerWidth: it also moves when a desktop
+   scrollbar appears or goes, which is a real width change for the layout. */
+function mhWidthGuard() {
+	var last = document.documentElement.clientWidth;
+
+	return function () {
+		var w = document.documentElement.clientWidth;
+		if ( w === last ) {
+			return false;
+		}
+		last = w;
+
+		return true;
+	};
+}
+
 ( function () {
 	var nav = document.querySelector( '.handheld-navigation' );
 	if ( ! nav ) {
@@ -27,10 +47,16 @@
 	if ( ! mainNav ) {
 		return;
 	}
+	// Texts in the page's language (functions.php, wp_localize_script). The
+	// sheet's words used to be Azerbaijani literals in this file, which no
+	// translation layer can reach — the same defect as the filter sheet's
+	// «60 nəticəni göstər» on /ru (owner 2026-10-04, scr 13/14).
+	var L10N = window.mhNavL10n || {};
 
-	// Storefront paints its own carets (li::after, a::after) and ships a
-	// .dropdown-toggle; with our ▾ that made two arrows per row. Killed here
-	// as well as in style.css so a phone on a stale stylesheet still gets one.
+	// Storefront paints its own carets (li::after, a::after, the language
+	// row's button::after) and ships a .dropdown-toggle; with our chevron that
+	// made two arrows per row. Killed here as well as in style.css so a phone
+	// on a stale stylesheet still gets one.
 	if ( ! document.getElementById( 'mh-drawer-css' ) ) {
 		var css = document.createElement( 'style' );
 		css.id = 'mh-drawer-css';
@@ -41,28 +67,48 @@
 			'.handheld-navigation li > a::before,' +
 			'.handheld-navigation .mh-submenu-toggle::after,' +
 			'.handheld-navigation .mh-submenu-toggle::before,' +
+			'.handheld-navigation ul.menu li .mh-langrow__btn::after,' +
 			'.handheld-navigation .dropdown-toggle{display:none!important;content:none!important}';
 		document.head.appendChild( css );
 	}
 
 	// ---------------------------------------------------------- accordion
-	nav.querySelectorAll( 'li.menu-item-has-children' ).forEach( function ( li ) {
+	/* Owner 2026-10-04 (scr 14): the ▾ was a 7px text glyph at the screen
+	   edge, unlike the language row's arrow, and a tap that missed it landed
+	   on the label and opened the parent page. Now the label stays a link as
+	   wide as its words and the REST of the row is the toggle (style.css),
+	   drawn with the very chevron the language row prints (inc/lang.php,
+	   mh_drawer_chevron) — one icon, one source. */
+	var chevRef = nav.querySelector( '.mh-langrow__btn .mh-chev' );
+	var CHEV = chevRef
+		? chevRef.outerHTML
+		: '<svg class="mh-chev" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>';
+	nav.querySelectorAll( 'li.menu-item-has-children' ).forEach( function ( li, i ) {
 		if ( li.querySelector( '.mh-submenu-toggle' ) ) {
 			return;
 		}
+		var sub = li.querySelector( 'ul.sub-menu' );
+		var link = li.querySelector( 'a' );
 		var btn = document.createElement( 'button' );
 		btn.type = 'button';
 		btn.className = 'mh-submenu-toggle';
-		btn.setAttribute( 'aria-label', 'Alt bölmələri aç/bağla' );
+		// «Продукция: подразделы» — the label names WHICH section it opens.
+		btn.setAttribute( 'aria-label', ( link ? link.textContent.trim() + ': ' : '' ) + ( L10N.subsections || 'alt bölmələr' ) );
 		btn.setAttribute( 'aria-expanded', 'false' );
-		btn.textContent = '▾';
+		if ( sub ) {
+			if ( ! sub.id ) {
+				sub.id = 'mh-sub-' + i;
+			}
+			btn.setAttribute( 'aria-controls', sub.id );
+		}
+		btn.innerHTML = CHEV;
 		btn.addEventListener( 'click', function ( e ) {
 			e.preventDefault();
 			e.stopPropagation();
 			var open = li.classList.toggle( 'mh-open' );
 			btn.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
 		} );
-		li.insertBefore( btn, li.querySelector( 'ul.sub-menu' ) );
+		li.insertBefore( btn, sub );
 	} );
 
 	// ------------------------------------------------------- sheet chrome
@@ -83,7 +129,7 @@
 		var x = document.createElement( 'button' );
 		x.type = 'button';
 		x.className = 'mh-drawer-x';
-		x.setAttribute( 'aria-label', 'Bağla' );
+		x.setAttribute( 'aria-label', L10N.close || 'Bağla' );
 		x.textContent = '✕';
 		x.addEventListener( 'click', closeDrawer );
 		head.appendChild( x );
@@ -147,10 +193,20 @@
 				foot.appendChild( out );
 			}
 		} else {
+			// A guest: the header's own login link is already translated and
+			// carries the /ru or /en prefix — mirror it, the bell-label way.
+			// «👤 Daxil ol» was Azerbaijani on every page and its href fell
+			// back to the unprefixed /hesabiniz/ (owner 2026-10-04, scr 14).
+			var hdr = document.querySelector( '.mh-header-account' );
+			var hdrLabel = hdr ? hdr.querySelector( '.mh-header-account__label' ) : null;
 			var login = document.createElement( 'a' );
 			login.className = 'mh-drawer-login';
-			login.href = ( window.mhAccountUrl || '/hesabiniz/' );
-			login.textContent = '👤 Daxil ol';
+			login.href = hdr && hdr.getAttribute( 'href' )
+				? hdr.getAttribute( 'href' )
+				: ( L10N.account || window.mhAccountUrl || '/hesabiniz/' );
+			login.textContent = '👤 ' + ( hdrLabel && hdrLabel.textContent.trim()
+				? hdrLabel.textContent.trim()
+				: ( L10N.login || 'Giriş' ) );
 			foot.appendChild( login );
 		}
 		nav.appendChild( foot );
@@ -217,9 +273,21 @@
 		return window.matchMedia( '(max-width: 66.4989em)' ).matches;
 	}
 
+	/* Owner 2026-10-04 (scr 20-27.e): the menu has its OWN body class,
+	   mh-menu-open, for its own looks (the dim, the body-level sheet rules).
+	   mh-drawer-open is still set with it, for the scroll lock and the header
+	   rules the menu shares with other sheets. Both are written only when the
+	   menu actually opens or closes — sync() also runs on resize, and writing
+	   the menu's "closed" state there used to strip another sheet's class. */
+	var menuOpen = false;
+
 	function sync() {
 		var open = mainNav.classList.contains( 'toggled' );
-		document.body.classList.toggle( 'mh-drawer-open', open );
+		if ( open !== menuOpen ) {
+			menuOpen = open;
+			document.body.classList.toggle( 'mh-drawer-open', open );
+			document.body.classList.toggle( 'mh-menu-open', open );
+		}
 
 		if ( open && phone() ) {
 			// The sheet is MOVED to <body> while it is open. Inside the header
@@ -246,7 +314,13 @@
 			}
 		}
 	}
-	window.addEventListener( 'resize', sync );
+	// Only a WIDTH change can move the phone breakpoint (phone() above).
+	var navWidthChanged = mhWidthGuard();
+	window.addEventListener( 'resize', function () {
+		if ( navWidthChanged() ) {
+			sync();
+		}
+	} );
 	// Storefront owns the toggle class; watching it beats guessing which of
 	// its handlers ran.
 	new MutationObserver( sync ).observe( mainNav, { attributes: true, attributeFilter: [ 'class' ] } );
@@ -262,9 +336,19 @@
    includes it and would add a horizontal scroller. Measured once, updated on
    resize. */
 ( function () {
+	// Guarded on its own value rather than by mhWidthGuard(): the number is
+	// innerWidth − clientWidth, and either side can move alone. A height-only
+	// iOS toolbar resize changes neither, so it writes nothing
+	// (owner 2026-10-04, scr 20-27.e).
+	var written = '';
 	function sbw() {
 		var w = window.innerWidth - document.documentElement.clientWidth;
-		document.documentElement.style.setProperty( '--mh-sbw', ( w > 0 ? w : 0 ) + 'px' );
+		var v = ( w > 0 ? w : 0 ) + 'px';
+		if ( v === written ) {
+			return;
+		}
+		written = v;
+		document.documentElement.style.setProperty( '--mh-sbw', v );
 	}
 	sbw();
 	window.addEventListener( 'resize', sbw );
@@ -279,6 +363,7 @@
 	if ( ! bar ) {
 		return;
 	}
+	var L10N = window.mhNavL10n || {};
 
 	// The panel is positioned from JS as well as CSS: on staging the open-state
 	// rule lost to the closed one no matter how it was written (both live in the
@@ -301,7 +386,8 @@
 	var btn = document.createElement( 'button' );
 	btn.type = 'button';
 	btn.className = 'mh-filters-btn';
-	btn.innerHTML = '<span aria-hidden="true">⚙</span> Filtrlər';
+	btn.innerHTML = '<span aria-hidden="true">⚙</span> ';
+	btn.appendChild( document.createTextNode( L10N.filters || 'Filtrlər' ) );
 	btn.addEventListener( 'click', open );
 	var sorting = document.querySelector( '.site-main > .storefront-sorting' );
 	if ( sorting ) {
@@ -318,7 +404,7 @@
 	var closeBtn = document.createElement( 'button' );
 	closeBtn.type = 'button';
 	closeBtn.className = 'mh-filters-close';
-	closeBtn.setAttribute( 'aria-label', 'Bağla' );
+	closeBtn.setAttribute( 'aria-label', L10N.close || 'Bağla' );
 	closeBtn.textContent = '✕';
 	closeBtn.addEventListener( 'click', close );
 	bar.insertBefore( closeBtn, bar.firstChild );
@@ -394,15 +480,39 @@
 	if ( ! chip || ! header ) {
 		return;
 	}
+	// The chip shows only on the desktop header; on a phone, and in the
+	// compact head, it is display:none. Measuring the header for it there
+	// forced a layout on every scroll frame and on every iOS toolbar resize
+	// for nothing (owner 2026-10-04, scr 20-27.e).
+	var desk = window.matchMedia( '(min-width: 66.5em)' );
 	function align() {
+		if ( ! desk.matches || document.body.classList.contains( 'mh-compact-head' ) ) {
+			return;
+		}
 		var band = header.getBoundingClientRect();
 		var h = chip.offsetHeight || 44;
 		chip.style.top = Math.max( 4, Math.round( band.top + band.height / 2 - h / 2 ) ) + 'px';
 	}
 	align();
-	window.addEventListener( 'resize', align );
+	var chipWidthChanged = mhWidthGuard();
+	window.addEventListener( 'resize', function () {
+		if ( chipWidthChanged() ) {
+			align();
+		}
+	} );
 	window.addEventListener( 'scroll', align, { passive: true } );
 	window.addEventListener( 'load', align );
+	// header-cluster.php flips mh-compact-head after its own resize/font
+	// checks; leaving the compact head must place the chip at once, not on
+	// the next scroll.
+	var wasCompact = document.body.classList.contains( 'mh-compact-head' );
+	new MutationObserver( function () {
+		var compact = document.body.classList.contains( 'mh-compact-head' );
+		if ( compact !== wasCompact ) {
+			wasCompact = compact;
+			align();
+		}
+	} ).observe( document.body, { attributes: true, attributeFilter: [ 'class' ] } );
 
 	/* Owner 2026-08-05: the dropdown closed the instant the cursor crossed the
 	   gap below the button. A hover grace: leaving the chip (or its halo)

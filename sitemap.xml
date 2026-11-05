@@ -1,24 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://polytech.az/</loc></url>
-  <url><loc>https://polytech.az/faydali-melumatlar/</loc></url>
-  <url><loc>https://polytech.az/elaqe/</loc></url>
-  <url><loc>https://polytech.az/mexfilik-siyaseti/</loc></url>
-  <url><loc>https://polytech.az/kuki-bildirisi/</loc></url>
-  <url><loc>https://polytech.az/istifade-sertleri/</loc></url>
-  <url><loc>https://polytech.az/tibbi-melumat/</loc></url>
-  <url><loc>https://polytech.az/en/</loc></url>
-  <url><loc>https://polytech.az/en/faydali-melumatlar/</loc></url>
-  <url><loc>https://polytech.az/en/elaqe/</loc></url>
-  <url><loc>https://polytech.az/en/mexfilik-siyaseti/</loc></url>
-  <url><loc>https://polytech.az/en/kuki-bildirisi/</loc></url>
-  <url><loc>https://polytech.az/en/istifade-sertleri/</loc></url>
-  <url><loc>https://polytech.az/en/tibbi-melumat/</loc></url>
-  <url><loc>https://polytech.az/ru/</loc></url>
-  <url><loc>https://polytech.az/ru/faydali-melumatlar/</loc></url>
-  <url><loc>https://polytech.az/ru/elaqe/</loc></url>
-  <url><loc>https://polytech.az/ru/mexfilik-siyaseti/</loc></url>
-  <url><loc>https://polytech.az/ru/kuki-bildirisi/</loc></url>
-  <url><loc>https://polytech.az/ru/istifade-sertleri/</loc></url>
-  <url><loc>https://polytech.az/ru/tibbi-melumat/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://polytech.az/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/faydali-melumatlar/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/faydali-melumatlar/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/faydali-melumatlar/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/faydali-melumatlar/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/faydali-melumatlar/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/faydali-melumatlar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/faydali-melumatlar/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/elaqe/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/elaqe/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/elaqe/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/elaqe/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/elaqe/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/elaqe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/elaqe/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/mexfilik-siyaseti/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/mexfilik-siyaseti/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/mexfilik-siyaseti/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/mexfilik-siyaseti/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/mexfilik-siyaseti/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/mexfilik-siyaseti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/mexfilik-siyaseti/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/kuki-bildirisi/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/kuki-bildirisi/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/kuki-bildirisi/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/kuki-bildirisi/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/kuki-bildirisi/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/kuki-bildirisi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/kuki-bildirisi/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/istifade-sertleri/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/istifade-sertleri/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/istifade-sertleri/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/istifade-sertleri/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/istifade-sertleri/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/istifade-sertleri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/istifade-sertleri/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/tibbi-melumat/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/tibbi-melumat/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/en/tibbi-melumat/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/tibbi-melumat/"/>
+  </url>
+  <url>
+    <loc>https://polytech.az/ru/tibbi-melumat/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="az-AZ" href="https://polytech.az/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polytech.az/en/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://polytech.az/ru/tibbi-melumat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polytech.az/tibbi-melumat/"/>
+  </url>
 </urlset>
